@@ -1,0 +1,89 @@
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="username">
+      <th mat-header-cell *matHeaderCellDef>Username</th>
+      <td mat-cell *matCellDef="let element">{{ element.username }}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="scooterId">
+      <th mat-header-cell *matHeaderCellDef>Scooter id</th>
+      <td mat-cell *matCellDef="let element">{{ element.scooterId }}</td>
+    </ng-container>
+
+    <!-- Weight Column -->
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <!-- <td mat-cell *matCellDef="let element">{{ element.drivingLicense }}</td> -->
+      <td mat-cell *matCellDef="let element">
+        <mat-icon *ngIf="element.status == 'COMPLETED'">done</mat-icon>
+        <mat-icon *ngIf="element.status != 'COMPLETED'"
+          >hourglass_full</mat-icon
+        >
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="totalTime">
+      <th mat-header-cell *matHeaderCellDef>Total time</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.totalTime / 3600 - 0.5 | number: "1.0-0" }}:
+        {{ element.totalTime * 1000 | date: "mm:ss" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="distance">
+      <th mat-header-cell *matHeaderCellDef>Distance</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.distance | number: "1.0-2" }} m
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef>Price</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.cost | number: "1.0-1" }} RON
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="startTime">
+      <th mat-header-cell *matHeaderCellDef>Start time</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.startTime | date: "dd/MM/yyyy hh:mm a" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="endTime">
+      <th mat-header-cell *matHeaderCellDef>End time</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.endTime | date: "dd/MM/yyyy hh:mm a" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="details">
+      <th mat-header-cell *matHeaderCellDef>Details</th>
+      <td mat-cell *matCellDef="let element">
+        <button
+          mat-button
+          class="show-details-btn"
+          (click)="onDetailsClick(element)"
+        >
+          Show details
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <tr class="mat-row" *matNoDataRow>
+    <td class="mat-cell" colspan="4"></td>
+  </tr>
+
+  <mat-paginator
+    [length]="noOfTrips"
+    [pageSize]="5"
+    aria-label="Select page of trips"
+    (page)="pageEvents($event)"
+  ></mat-paginator>
+</div>

@@ -1,0 +1,83 @@
+table {
+  width: 100%;
+}
+
+.download-div {
+  padding: 6px;
+}
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mat-toolbar.mat-primary {
+  //position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+img {
+  margin: 10px;
+  width: 57px;
+  height: 57px;
+}
+
+.title {
+  background-color: rgb(229, 48, 98);
+  border-radius: 20px;
+  max-width: 90%;
+  margin: 1% 5%;
+  justify-content: center;
+}
+
+mat-sidenav {
+  //margin: 1%;
+  padding: 1%;
+}
+
+.download-img {
+  color: white;
+  background-color: rgb(59, 17, 89);
+}
+
+td,
+th {
+  font-weight: 450;
+}
+
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.suspended-btn {
+  background-color: #f44336;
+  color: white;
+  width: 115px;
+}
+
+.active-btn {
+  color: white;
+  background-color: rgb(59, 17, 89);
+  width: 115px;
+}
+
+.suspend-customer-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.show-details-btn {
+  color: white;
+  background-color: #f44336;
+}

@@ -1,0 +1,343 @@
+{
+	"info": {
+		"_postman_id": "df577b54-fa61-4673-8b2e-e411217c8b49",
+		"name": "Scooter-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Administrator",
+			"item": [
+				{
+					"name": "Administrator register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin1@gmail.com\",\n    \"password\": \"parola\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/administrator/license",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"administrator",
+								"license"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Administrator Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluMkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRpMTN1eWszRnhnMVN6WE5adjlONDgucXdNVGJtOG9YbHdpZ0pJcDdIS3BrbTVQNjBTb1QwUyIsImlhdCI6MTY0OTgzNzcwNX0.LmHIUu9Vzfh9_AxPh_x0YB8cTC4uoH84tBEMBSHsdpo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin2@gmail.com\",\n    \"password\": \"parola\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/administrator/login",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"administrator",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get customers",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Scooter",
+			"item": [
+				{
+					"name": "Add Scooter",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"number\": 3,\n    \"battery\": 75,\n    \"internalId\": 2121,\n    \"coordX\":46.75368173443409,\n    \"coordY\":  23.581470551690657\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/scooter/register",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"scooter",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch all scooters",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get scooters within 4 km",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"coordX\": 46.75405294419565,\n    \"coordY\" 23.58272582543905\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "loc",
+							"host": [
+								"loc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find by id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Add a customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"customer12gmail.com\",\n    \"username\": \"customer12\",\n    \"password\": \"parola\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/customer/register",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"customer",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"customer2@gmail.com\",\n    \"username\": \"customer2\",\n    \"password\": \"parola\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/customer/login",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"customer",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Welcome",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Upload file",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "customerId",
+									"value": "62515c7dcd85874e23beb18f",
+									"type": "text"
+								},
+								{
+									"key": "license",
+									"type": "file",
+									"src": "/Users/giurgiur99/Documents/Scooter-app/Back-end/assets/document-example.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/customer/license",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"customer",
+								"license"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get file URL",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"path\": \"Driving_license/62515c7dcd85874e23beb18f/2022-04-12\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/customer/license",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"customer",
+								"license"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImN1c3RvbWVyMmdtYWlsLmNvbSIsInVzZXJuYW1lIjoiY3VzdG9tZXIyIiwicGFzc3dvcmQiOiIkMmIkMTAkTHFwMGQ1dUFwZllqTlRuRjdVU20uLko1QTJDakFkbDA1VmozTmxrQ0c4bkYzU2dKc0c2U2UiLCJkcml2aW5nTGljZW5zZSI6IiIsInN0YXR1cyI6IklOX1BST0dSRVNTIiwiaWF0IjoxNjQ5ODM5OTk3fQ.U6av5ihSVJpycjiDiIbuoU21-ogG3SLv2MThj4j7Do8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"customer2\",\n    \"password\": \"parola\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/customer/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"customer",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all customers",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

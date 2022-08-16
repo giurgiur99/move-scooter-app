@@ -1,0 +1,14 @@
+<mat-card>
+  <div class="my-google-map">
+    <google-map
+      [options]="options"
+      [width]="800"
+      [height]="600"
+      #GoogleMap
+      #mapel
+    >
+      <map-marker></map-marker>
+      <map-polyline [path]="this.coordinates" [options]="optionsPolyline"></map-polyline>
+    </google-map>
+  </div>
+</mat-card>

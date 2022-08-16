@@ -1,0 +1,63 @@
+<div mat-dialog-content class="main-div">
+  <p>Please enter new scooter details</p>
+
+  <div class="data">
+    <mat-form-field appearance="fill">
+      <mat-label>Number</mat-label>
+      <input matInput [(ngModel)]="data.number" required type="number" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Internal Id</mat-label>
+      <input matInput [(ngModel)]="data.internalId" required type="number" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Battery</mat-label>
+      <input
+        matInput
+        [(ngModel)]="data.battery"
+        [formControl]="battery"
+        type="number"
+        required
+      />
+    </mat-form-field>
+  </div>
+
+  <div class="coord">
+    <mat-form-field appearance="fill">
+      <mat-label>Latitude</mat-label>
+      <input matInput [(ngModel)]="data.coordX" type="number" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Longitude</mat-label>
+      <input matInput [(ngModel)]="data.coordY" type="number" />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Unlock code</mat-label>
+      <input matInput [(ngModel)]="data.unlockCode" type="number" required />
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button
+      mat-button
+      [mat-dialog-close]="data"
+      cdkFocusInitial
+      [disabled]="
+        !data.battery ||
+        !data.internalId ||
+        !data.number ||
+        !data.coordX ||
+        !data.coordY
+      "
+      (click)="showData()"
+    >
+      Ok
+    </button>
+  </div>
+</div>

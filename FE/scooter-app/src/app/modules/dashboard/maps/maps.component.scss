@@ -1,0 +1,21 @@
+.my-google-map {
+  .map-container {
+    width: 1500px;
+    height: 700px;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scooter-main-div {
+}
+
+.bk-div {
+  width: 500px;
+  height: 700px;
+  background-image: url("http://localhost:4200/assets/scooter.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 50%;
+}

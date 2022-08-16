@@ -1,0 +1,96 @@
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>Email</th>
+      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="username">
+      <th mat-header-cell *matHeaderCellDef>Username</th>
+      <td mat-cell *matCellDef="let element">{{ element.username }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="drivingLicense">
+      <th mat-header-cell *matHeaderCellDef>Driving license</th>
+      <td mat-cell *matCellDef="let element">
+        <div class="download-div" *ngIf="element.drivingLicense">
+          <button
+            mat-raised-button
+            class="download-img"
+            (click)="downloadPic(element)"
+          >
+            <mat-icon>get_app</mat-icon>
+          </button>
+        </div>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="numberOfTrips">
+      <th mat-header-cell *matHeaderCellDef>#Trips</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.numberOfTrips }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let element">
+        <button
+          class="active-btn"
+          mat-button
+          *ngIf="!(element.status == 'SUSPENDED')"
+        >
+          {{ element.status }}
+        </button>
+        <button
+          class="suspended-btn"
+          mat-button
+          *ngIf="element.status == 'SUSPENDED'"
+        >
+          {{ element.status }}
+        </button>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="suspend">
+      <th mat-header-cell *matHeaderCellDef>Suspend user</th>
+      <td mat-cell *matCellDef="let element">
+        <button
+          class="suspend-customer-btn"
+          mat-button
+          *ngIf="!(element.status == 'SUSPENDED')"
+          (click)="suspendUser(element)"
+        >
+          <mat-icon>cancel</mat-icon>
+        </button>
+        <button
+          class="unsuspend-customer-btn"
+          mat-button
+          *ngIf="element.status == 'SUSPENDED'"
+          (click)="unsuspendUser(element)"
+        >
+          <mat-icon>refresh</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="joinedDate">
+      <th mat-header-cell *matHeaderCellDef>Joined Date</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.joinedDate | date: "dd/MM/yy" }}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator
+    [length]="usersNo"
+    [pageSize]="5"
+    aria-label="Select page of customers"
+    (page)="pageEvents($event)"
+  >
+    ></mat-paginator
+  >
+</div>

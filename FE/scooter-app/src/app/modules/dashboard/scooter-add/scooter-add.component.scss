@@ -1,0 +1,51 @@
+.example-form {
+  min-width: 150px;
+  max-width: 600px;
+  width: 100%;
+
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  margin-top: 50px;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+td {
+  padding-right: 8px;
+}
+
+.form-center {
+  display: block;
+  text-align: center;
+}
+
+.scooter-data {
+  padding: 50px 50px;
+}
+
+.scooter-coord {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.coord {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.main-div {
+  height: 500px;
+  width: 500px;
+}

@@ -1,0 +1,17 @@
+<mat-card>
+  <div class="my-google-map">
+    <google-map
+      [options]="options"
+      [width]="1000"
+      [height]="600"
+      (mapDrag)="mapDragSubject.next()"
+      #GoogleMap
+    >
+      <map-marker
+        *ngFor="let marker of markers"
+        [options]="marker"
+        (mapClick)="onScooterClick(marker)"
+      ></map-marker>
+    </google-map>
+  </div>
+</mat-card>

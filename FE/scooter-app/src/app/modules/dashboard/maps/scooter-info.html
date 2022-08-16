@@ -1,0 +1,27 @@
+<div class="scooter-main-div">
+  <h1 mat-dialog-title>Scooter data</h1>
+  <div class="bk-div" mat-dialog-content *ngIf="data">
+    <mat-dialog-content class="mat-typography">
+      <div class="data-div">
+        <h2>Scooter internal id : {{data.internalId}}</h2>
+
+        <h2>Status: {{data.status}}</h2>
+
+        <h2>Battery : {{data.battery}}%</h2>
+
+        <h2>
+          Locked: <mat-icon *ngIf="data.locked">locked</mat-icon>
+          <mat-icon *ngIf="!data.locked">lock_open</mat-icon>
+        </h2>
+
+        <h2>
+          Booked: <mat-icon *ngIf="data.booked">turned_in</mat-icon>
+          <mat-icon *ngIf="!data.booked">turned_in_not</mat-icon>
+        </h2>
+      </div>
+    </mat-dialog-content>
+  </div>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+  </mat-dialog-actions>
+</div>

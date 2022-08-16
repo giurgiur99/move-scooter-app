@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "commonjs",
+    "sourceMap": true,
+    "lib": ["es2019", "dom", "es6"],
+    "outDir": "out",
+    "esModuleInterop": true,
+    "noFallthroughCasesInSwitch": true
+  }
+}
