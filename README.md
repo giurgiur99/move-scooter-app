@@ -4,9 +4,6 @@ Server-side and administrator dashboard part of the project called MOVE, a netwo
 Statistics, more TBA!
 ![First menu](https://user-images.githubusercontent.com/24292234/184830950-8a0ff651-aaf2-4af6-b71a-e6f36241c191.png)
 
-Customers data, ban users, find live data
-![Customers](https://user-images.githubusercontent.com/24292234/184831072-73582516-1ae6-44f5-b6ec-3152401d14b2.png)
-
 Ban scooter, details, etc.
 ![Scooter data](https://user-images.githubusercontent.com/24292234/184831918-ff066e89-d733-4346-862e-601553208984.png)
 
